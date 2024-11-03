@@ -8,6 +8,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Components/WidgetComponent.h"
 
 ABlasterCharacter::ABlasterCharacter()
 {
@@ -46,11 +47,21 @@ ABlasterCharacter::ABlasterCharacter()
 		EquipAction = InputActionEquipRef.Object;
 	}
 
+	//OverheadWidget
+	OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
+	OverheadWidget->SetupAttachment(RootComponent);
 }
 
 void ABlasterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	APlayerController* MyController = Cast<APlayerController>(GetController());
+	if (MyController == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PlayerController is null!"));
+		return; // PlayerController가 유효하지 않으면 함수 종료
+	}
+
 	
 	APlayerController* PlayerController = CastChecked<APlayerController>(GetController());
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))

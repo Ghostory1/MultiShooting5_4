@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\unreal projects\\blaster_54\\plugins\\mutiplayersessions\\source\\mutiplayersessions\\private\\mutiplayersessions.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\unreal projects\\blaster_54\\intermediate\\build\\win64\\x64\\blaster_54editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "f:\\unreal projects\\blaster_54\\plugins\\mutiplayersessions\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\mutiplayersessions\\definitions.mutiplayersessions.h",
+            "f:\\unreal projects\\blaster_54\\plugins\\mutiplayersessions\\source\\mutiplayersessions\\public\\mutiplayersessions.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

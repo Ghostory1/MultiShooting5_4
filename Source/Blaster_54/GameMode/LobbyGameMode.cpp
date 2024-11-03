@@ -17,7 +17,6 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 		{
 			//seamless 로 안정적인 맵 전환
 			bUseSeamlessTravel = true;
-
 			//리슨서버로
 			World->ServerTravel(FString("/Game/Maps/BlasterMap?listen"));
 		}

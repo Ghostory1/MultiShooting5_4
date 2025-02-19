@@ -5,9 +5,9 @@
 			"Menu.gen.cpp.obj",
 			"MultiplayerSessionsSubsystem.gen.cpp.obj",
 			"MutiplayerSessions.init.gen.cpp.obj",
+			"Menu.cpp.obj",
 			"MultiplayerSessionsSubsystem.cpp.obj",
-			"MutiplayerSessions.cpp.obj",
-			"Menu.cpp.obj"
+			"MutiplayerSessions.cpp.obj"
 		]
 	}
 }

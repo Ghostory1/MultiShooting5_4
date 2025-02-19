@@ -33,10 +33,13 @@ protected:
 	TObjectPtr<class UInputAction> LookAction;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, Meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInputAction> EquipAction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, Meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UInputAction> CrouchAction;
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
 	void EquipButtonPressed();
+	void CrouchButtonPressed();
 
 private:
 	//Spring Arm
@@ -58,7 +61,10 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	class UCombatComponent* Combat;
+
+	UFUNCTION(Server,Reliable)
+	void ServerEquipButtonPressed(); // RPC
 public:	
 	void SetOverlappingWeapon(AWeapon* Weapon);
-
+	bool IsWeaponEquipped();
 };
